@@ -25,6 +25,7 @@ const Header = () => {
       <div className="header-inner container">
         {/* Left: Brand Logo */}
         <Link to="/" className="brand-logo">
+        <div className="logo-wreath-wrapper">
           <img
             src="/brand-logo.png"
             alt="WedKnotCraft Logo"
@@ -33,11 +34,22 @@ const Header = () => {
             height="72"
             loading="eager"
           />
+      <div className="wreath-center-text">
+      <span>Cherish</span>
+      <span>By</span>
+      </div>
+
+    {/* Text Layered over the bottom ribbon */}
+    <div className="wreath-banner-text">Wedding Cards</div>
+    </div>
+  
           <div className="brand-wordmark">
             <span className="wordmark-wed">Wed</span>
             <span className="wordmark-knot">Knot</span>
             <span className="wordmark-craft">Craft</span>
           </div>
+          
+    
         </Link>
 
 
@@ -240,7 +252,47 @@ const Header = () => {
             width: 100%;
           }
         }
-      `}</style>
+          .wreath-center-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  font-family: 'Georgia', serif; 
+  font-size: 9px;
+  font-style: italic;
+  line-height: 1.2;
+  color: #111;
+  text-align: center;
+      }
+  .wreath-banner-text {
+  position: absolute;
+  bottom: 11px; /* Places it neatly right onto the ribbon banner */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  
+  /* Text styling for the small banner font */
+  font-family: sans-serif;
+  font-size: 5.5px;
+  letter-spacing: 0.2px;
+  text-transform: lowercase;
+  color: #2b4c2b; /* Dark moss green to match the leaves */
+  text-align: center;
+  margin:0;
+  padding:0;
+}
+  .logo-wreath-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: inline-block;
+}
+`}</style>
     </header>
   );
 };
